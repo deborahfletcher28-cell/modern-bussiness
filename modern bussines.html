@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Modern Business — Responsive Template</title>
+  <meta name="description" content="A simple responsive website template with HTML, CSS and JavaScript (single-file).">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f7f8fb; --card:#ffffff; --accent:#6b5bff; --muted:#6b7280; --radius:12px;
+      --shadow: 0 6px 18px rgba(16,24,40,0.08);
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#ffffff);color:#0f172a}
+    a{color:inherit;text-decoration:none}
+
+    /* ========== NAV ========== */
+    .nav{backdrop-filter: blur(6px);position:sticky;top:0;z-index:40;background:rgba(255,255,255,0.6);border-bottom:1px solid rgba(15,23,42,0.04)}
+    .container{max-width:1100px;margin:0 auto;padding:1rem}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .brand{display:flex;align-items:center;gap:.6rem;font-weight:700}
+    .brand .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#4ecdc4);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+    nav ul{display:flex;gap:1rem;align-items:center;list-style:none;margin:0;padding:0}
+    nav a{padding:.5rem .75rem;border-radius:8px}
+    nav a:hover{background:rgba(11,22,60,0.04)}
+    .cta{background:var(--accent);color:#fff;padding:.5rem .9rem;border-radius:10px;font-weight:600}
+    .menu-btn{display:none}
+
+    /* ========== HERO ========== */
+    .hero{padding:3.5rem 0;display:grid;grid-template-columns:1fr 420px;gap:2rem;align-items:center}
+    .hero h1{font-size:clamp(1.6rem,3.6vw,2.4rem);margin:0 0 .6rem}
+    .hero p{color:var(--muted);margin:0 0 1.2rem}
+    .features{display:flex;gap:1rem;flex-wrap:wrap}
+    .feature{background:var(--card);padding:1rem;border-radius:10px;box-shadow:var(--shadow);min-width:160px}
+
+    /* hero card */
+    .card{background:var(--card);padding:1.2rem;border-radius:14px;box-shadow:var(--shadow)}
+    .stats{display:flex;gap:1rem;justify-content:space-between;margin-top:.6rem}
+
+    /* ========== SECTIONS ========== */
+    section{padding:2.25rem 0}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .about{display:flex;gap:1.25rem;align-items:center}
+    .about img{width:220px;border-radius:10px;object-fit:cover}
+
+    /* contact */
+    form{display:grid;gap:.75rem}
+    input,textarea{padding:.75rem;border-radius:10px;border:1px solid rgba(15,23,42,0.06);font:inherit}
+    textarea{min-height:110px;resize:vertical}
+    .muted{color:var(--muted);font-size:.95rem}
+
+    /* footer */
+    footer{padding:1.5rem 0;border-top:1px solid rgba(15,23,42,0.04);text-align:center;color:var(--muted)}
+
+    /* responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      nav ul{display:none}
+      .menu-btn{display:block;border:0;background:none;padding:.25rem}
+      .mobile-nav{display:none}
+      .grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:560px){
+      .grid{grid-template-columns:1fr}
+      .about{flex-direction:column}
+      .brand span{display:none}
+    }
+
+    /* mobile open */
+    .mobile-nav.open{display:block;padding:1rem;border-top:1px solid rgba(15,23,42,0.04);background:rgba(255,255,255,0.9)}
+
+    /* small utilities */
+    .btn{display:inline-block;padding:.5rem .8rem;border-radius:10px}
+    .lead{font-size:1.05rem}
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <div style="display:flex;align-items:center;gap:1rem">
+        <div class="brand"><div class="logo">MB</div><span>Modern Business</span></div>
+      </div>
+
+      <nav>
+        <button class="menu-btn" aria-label="Toggle menu">☰</button>
+        <ul class="desktop-menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a class="cta" href="#contact">Get Started</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="mobile-nav" style="display:none"></div>
+  </header>
+
+  <main class="container">
+    <section id="home" class="hero">
+      <div>
+        <h1>Beautiful, fast websites that help your business grow.</h1>
+        <p class="lead">A modern responsive template built with clean HTML, custom CSS, and a little JavaScript — ready to customize and launch.</p>
+        <div class="features">
+          <div class="feature">
+            <strong>Responsive</strong>
+            <div class="muted">Looks great on phones and desktops</div>
+          </div>
+          <div class="feature">
+            <strong>Performance</strong>
+            <div class="muted">Lightweight and fast to load</div>
+          </div>
+          <div class="feature">
+            <strong>Customizable</strong>
+            <div class="muted">Easy to adapt to your brand</div>
+          </div>
+        </div>
+
+        <div style="margin-top:1rem">
+          <a class="btn cta" href="#contact">Contact Us</a>
+          <a class="btn" style="margin-left:.5rem" href="#about">Learn More</a>
+        </div>
+
+        <div style="margin-top:1rem" class="card">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div style="font-weight:700">Trusted by teams</div>
+              <div class="muted">Over 1,200 businesses use this template</div>
+            </div>
+            <div class="stats">
+              <div style="text-align:center"><div style="font-weight:700">4.9</div><div class="muted">Rating</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h3 style="margin:0 0 .5rem">Get a free consult</h3>
+          <p class="muted" style="margin:0 0 1rem">Tell us a little about your project and we'll reach out within 1-2 business days.</p>
+          <form id="miniForm">
+            <input id="miniName" placeholder="Your name" required>
+            <input id="miniEmail" placeholder="Email" type="email" required style="margin-top:.5rem">
+            <button class="cta" style="margin-top:.6rem;border:0;cursor:pointer">Request</button>
+          </form>
+          <div id="miniMsg" class="muted" style="margin-top:.6rem"></div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="services">
+      <h2>Our Services</h2>
+      <div class="grid" style="margin-top:1rem">
+        <div class="card"><h3>Web Design</h3><p class="muted">Tailored UI and responsive layouts.</p></div>
+        <div class="card"><h3>Development</h3><p class="muted">Front-end and light back-end integration.</p></div>
+        <div class="card"><h3>Consulting</h3><p class="muted">Strategy, SEO basics, and performance tips.</p></div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About Us</h2>
+      <div class="about" style="margin-top:1rem">
+        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="team">
+        <div>
+          <p class="muted">We build production-ready websites for small businesses and creatives. Our process focuses on clarity, speed, and long-term maintainability.</p>
+          <p style="margin-top:.75rem">Our small team combines design sensibility and practical engineering so you can launch confidently.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="muted">Send a message and we'll get back to you.</p>
+      <form id="contactForm" style="margin-top:1rem;max-width:720px">
+        <input id="name" placeholder="Full name" required>
+        <input id="email" placeholder="Email address" type="email" required>
+        <input id="subject" placeholder="Subject">
+        <textarea id="message" placeholder="Your message" required></textarea>
+        <div style="display:flex;gap:.5rem">
+          <button id="sendBtn" class="cta" type="submit">Send message</button>
+          <button id="clearBtn" type="button" class="btn">Clear</button>
+        </div>
+        <div id="formStatus" class="muted" style="margin-top:.6rem"></div>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> Modern Business — Built with ♥</div>
+  </footer>
+
+  <script>
+    // small helper: smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const href=a.getAttribute('href');
+        if(href.length>1){
+          e.preventDefault();
+          document.querySelector(href).scrollIntoView({behavior:'smooth',block:'start'});
+          // close mobile menu if open
+          document.querySelector('.mobile-nav')?.classList.remove('open');
+        }
+      })
+    })
+
+    // mobile menu toggle
+    const menuBtn=document.querySelector('.menu-btn');
+    const mobileNav=document.querySelector('.mobile-nav');
+    menuBtn.addEventListener('click',()=>{
+      if(!mobileNav.classList.contains('open')){
+        mobileNav.innerHTML = `<div style="display:flex;flex-direction:column;gap:.5rem"><a href='#home'>Home</a><a href='#services'>Services</a><a href='#about'>About</a><a href='#contact'>Contact</a><a class='cta' href='#contact'>Get Started</a></div>`;
+        mobileNav.classList.add('open');
+        mobileNav.style.display='block';
+      } else {
+        mobileNav.classList.remove('open');
+        mobileNav.style.display='none';
+      }
+    })
+
+    // mini form handler
+    document.getElementById('miniForm').addEventListener('submit',function(e){
+      e.preventDefault();
+      const name=document.getElementById('miniName').value.trim();
+      const email=document.getElementById('miniEmail').value.trim();
+      const msg=document.getElementById('miniMsg');
+      if(!name||!email){ msg.textContent='Please enter name and email.'; return; }
+      msg.textContent='Thanks! Your request has been received.';
+      this.reset();
+    })
+
+    // full contact form (front-end validation + fake submit)
+    const contactForm=document.getElementById('contactForm');
+    const formStatus=document.getElementById('formStatus');
+    contactForm.addEventListener('submit',function(e){
+      e.preventDefault();
+      const nm=document.getElementById('name').value.trim();
+      const em=document.getElementById('email').value.trim();
+      const msg=document.getElementById('message').value.trim();
+      if(!nm||!em||!msg){ formStatus.textContent='Please fill name, email and message.'; return; }
+      // simulate sending
+      formStatus.textContent='Sending...';
+      setTimeout(()=>{
+        formStatus.textContent='Message sent — we will contact you soon.';
+        contactForm.reset();
+      },800);
+    })
+
+    document.getElementById('clearBtn').addEventListener('click',()=>{ contactForm.reset(); formStatus.textContent=''; })
+
+    // set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
